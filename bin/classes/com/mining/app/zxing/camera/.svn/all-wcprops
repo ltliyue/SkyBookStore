@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera
+END
+AutoFocusCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/AutoFocusCallback.java
+END
+PreviewCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/PreviewCallback.java
+END
+CameraConfigurationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/CameraConfigurationManager.java
+END
+CameraManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/CameraManager.java
+END
+FlashlightManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/FlashlightManager.java
+END
+PlanarYUVLuminanceSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/camera/PlanarYUVLuminanceSource.java
+END

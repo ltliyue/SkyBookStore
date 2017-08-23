@@ -1,0 +1,213 @@
+﻿<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login" >
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:text="小U系统"
+        android:textColor="#FFFF00"
+        android:textSize="24dip" >
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="现场温度: "
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+
+        <EditText
+            android:id="@+id/edit_temp"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txt2"
+            android:editable="true"
+            android:ems="10"
+            android:minWidth="100dip"
+            android:text="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/edit_temp"
+            android:text=" 度"
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel1"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="报警温度: "
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+
+        <Spinner
+            android:id="@+id/spin_alarm"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/txt3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/spin_alarm"
+            android:text=" 度"
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel2"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预约时间: "
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+
+        <EditText
+            android:id="@+id/editText_t"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/textView4"
+            android:editable="true"
+            android:ems="10"
+            android:minWidth="100dip"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/editText_t"
+            android:text=" 分"
+            android:textColor="#FFFFFF"
+            android:textSize="24dip"
+            tools:context=".LoginActivity" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rel3"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="#FF0000"
+        android:textSize="24dip" >
+    </TextView>
+
+    <Button
+        android:id="@+id/btn_off1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btn120x40"
+        android:text="小U休息"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_on1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_off1"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btn120x40"
+        android:text="小U充电"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_off2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn120x40"
+        android:text="小U睡眠"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_on2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_off2"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn120x40"
+        android:text="小U启动"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_timeroff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn120x40"
+        android:text="预约关闭"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_timeron"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_timeroff"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn120x40"
+        android:text="定时开启"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/close" >
+    </Button>
+
+</RelativeLayout>

@@ -1,0 +1,111 @@
+﻿<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login" >
+
+    <ImageView
+        android:id="@+id/gzac"
+        android:layout_width="460px"
+        android:layout_height="200px"
+        android:layout_marginLeft="10px"
+        android:layout_marginTop="10px" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dip"
+        android:text="小U系统"
+        android:textColor="#000000"
+        android:textSize="27dip" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dip"
+        android:text="小U启动设置 "
+        android:textColor="#000000"
+        android:textSize="20dip"
+        tools:context=".LoginActivity" />
+
+    <EditText
+        android:id="@+id/editText_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="193dip"
+        android:ems="10"
+        android:inputType="textUri"
+        android:minWidth="145dip"
+        android:text="192.168.1.1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="118dip"
+        android:text="服务器IP:"
+        android:textColor="#000000"
+        android:textSize="16dip"
+        tools:context=".LoginActivity" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_ip" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="118dip"
+            android:text="端 口 号:"
+            android:textColor="#000000"
+            android:textSize="16dip"
+            tools:context=".LoginActivity" />
+
+        <EditText
+            android:id="@+id/editText_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="193dip"
+            android:ems="10"
+            android:minWidth="145dip"
+            android:text="2001" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/wifi_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn120x40"
+        android:text="登录"
+        android:textColor="#ffffff" >
+    </Button>
+
+    <Button
+        android:id="@+id/quit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn120x40"
+        android:text="退出"
+        android:textColor="#ffffff" >
+    </Button>
+
+</RelativeLayout>

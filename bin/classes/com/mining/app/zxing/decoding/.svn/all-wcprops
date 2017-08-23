@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding
+END
+DecodeHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/DecodeHandler.java
+END
+DecodeFormatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/DecodeFormatManager.java
+END
+DecodeThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/DecodeThread.java
+END
+Intents.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/Intents.java
+END
+FinishListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/FinishListener.java
+END
+CaptureActivityHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/CaptureActivityHandler.java
+END
+InactivityTimer.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SkyBookProject/!svn/ver/3/SkyBookStore/src/com/mining/app/zxing/decoding/InactivityTimer.java
+END

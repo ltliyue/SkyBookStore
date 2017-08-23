@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:visibility="visible" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:paddingLeft="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="回复了您的帖子："
+                android:textColor="@color/blue"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/gonghuo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#9966cc"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/post_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:maxLines="2"
+            android:text="帖子名称帖子名称帖子名称"
+            android:textSize="15sp" />
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/content" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:maxLines="1" -->
+        <!-- android:text="点击查看详情" -->
+        <!-- android:textColor="@color/gray_text_color" -->
+        <!-- android:textSize="11sp" /> -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/dingjia"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#9966cc"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/zhekou"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#9966cc"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/maijia"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#9966cc"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text=""
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/yuanshi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#663300"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/xiancun"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="帖子：32511"
+                android:textColor="#663300"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#7FB80F" />
+
+</LinearLayout>
