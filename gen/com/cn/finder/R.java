@@ -66,15 +66,15 @@ public final class R {
 	}
 	public static final class drawable {
 		public static final int bg_black90 = 0x7f02002a;
-		public static final int ic_error = 0x7f020030;
-		public static final int ic_launcher = 0x7f020031;
-		public static final int ic_stub = 0x7f020032;
-		public static final int shadow_bottom = 0x7f02003d;
-		public static final int shadow_left = 0x7f02003e;
-		public static final int shadow_right = 0x7f02003f;
-		public static final int toast_bg = 0x7f020046;
-		public static final int xsearch_loading = 0x7f02005f;
-		public static final int xsearch_msg_pull_arrow_down = 0x7f020060;
+		public static final int ic_error = 0x7f020031;
+		public static final int ic_launcher = 0x7f020032;
+		public static final int ic_stub = 0x7f020033;
+		public static final int shadow_bottom = 0x7f02003e;
+		public static final int shadow_left = 0x7f02003f;
+		public static final int shadow_right = 0x7f020040;
+		public static final int toast_bg = 0x7f020047;
+		public static final int xsearch_loading = 0x7f020060;
+		public static final int xsearch_msg_pull_arrow_down = 0x7f020061;
 	}
 	public static final class id {
 		public static final int all = 0x7f070011;
