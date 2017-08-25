@@ -3,15 +3,34 @@ package com.cn.skybook;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.cn.finder.base.BaseActivty;
+import com.cn.finder.pulltorefresh.PullToRefreshBase;
+import com.cn.finder.pulltorefresh.PullToRefreshBase.OnRefreshListener;
+import com.cn.finder.pulltorefresh.PullToRefreshListView;
+import com.cn.skybook.model.Book;
+import com.cn.skybook.model.BookSearchResult;
+import com.cn.skybook.utils.TimeTools;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -20,27 +39,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.alibaba.fastjson.JSON;
-import com.cn.finder.base.BaseActivty;
-import com.cn.finder.base.MyBaseAdapter;
-import com.cn.finder.pulltorefresh.PullToRefreshBase;
-import com.cn.finder.pulltorefresh.PullToRefreshBase.OnRefreshListener;
-import com.cn.finder.pulltorefresh.PullToRefreshListView;
-import com.cn.finder.utils.PreferencesUtils;
-import com.cn.skybook.model.Book;
-import com.cn.skybook.model.BookSearchResult;
-import com.cn.skybook.model.WareList;
-import com.cn.skybook.url.ApiUrl;
-import com.cn.skybook.utils.TimeTools;
-import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
-import com.lidroid.xutils.util.LogUtils;
-import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class SearchActivity extends BaseActivty {
 
@@ -209,6 +207,26 @@ public class SearchActivity extends BaseActivty {
 			@Override
 			public void onSuccess(ResponseInfo<String> arg0) {
 				if (arg0.result != null) {
+					Document doc = Jsoup.parse(GetInfoByHttpUtils.getInstence().httpGet(url));
+
+			        Elements scripts = doc.select("script");
+
+			        String data = null;
+			        for (Element script : scripts) {
+			            if (script.html().contains("jsArgs['search'] =")) {
+			                Pattern p = Pattern.compile("searchData:(.*), abtestForUpToSaving");
+			                Matcher m = p.matcher(script.toString());
+			                while (m.find()) {
+			                    data = m.group(1);
+			                }
+			            }
+			        }
+			        if (data != null) {
+			            JSONObject jsonObject = JSON.parseObject(data);
+			            String wareList  = jsonObject.getString("wareList");
+			            System.out.println(wareList);
+			        }
+			        
 					BookSearchResult bookSearchResult = JSON.parseObject(arg0.result,BookSearchResult.class);
 					
 					bookListAdapter = new BookWebListAdapter(ct, bookSearchResult.getWareList());
