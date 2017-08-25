@@ -1,9 +1,6 @@
 package com.cn.skybook;
 
 import com.cn.finder.utils.PreferencesUtils;
-import com.cn.finder.utils.SharedPreferencesUtil;
-import com.cn.skybook.url.ApiUrl;
-import com.umeng.update.UmengUpdateAgent;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -25,7 +22,6 @@ public class SplashActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
-		UmengUpdateAgent.update(this);
 		// mHandler.sendEmptyMessageDelayed(GO_LOGIN, 0);
 		mHandler.sendEmptyMessage(GO_HOME);
 	}

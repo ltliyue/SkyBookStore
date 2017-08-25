@@ -29,6 +29,8 @@ import com.cn.finder.pulltorefresh.PullToRefreshBase.OnRefreshListener;
 import com.cn.finder.pulltorefresh.PullToRefreshListView;
 import com.cn.finder.utils.PreferencesUtils;
 import com.cn.skybook.model.Book;
+import com.cn.skybook.model.BookSearchResult;
+import com.cn.skybook.model.WareList;
 import com.cn.skybook.url.ApiUrl;
 import com.cn.skybook.utils.TimeTools;
 import com.lidroid.xutils.ViewUtils;
@@ -65,7 +67,7 @@ public class SearchActivity extends BaseActivty {
 	String code = "";
 	String url = "";
 
-	BookListAdapter bookListAdapter;
+	BookWebListAdapter bookListAdapter;
 
 	@Override
 	protected void initView() {
@@ -201,15 +203,17 @@ public class SearchActivity extends BaseActivty {
 
 			@Override
 			public void onFailure(HttpException arg0, String arg1) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void onSuccess(ResponseInfo<String> arg0) {
-				// TODO Auto-generated method stub
 				if (arg0.result != null) {
-					LogUtils.i(arg0.result);
+					BookSearchResult bookSearchResult = JSON.parseObject(arg0.result,BookSearchResult.class);
+					
+					bookListAdapter = new BookWebListAdapter(ct, bookSearchResult.getWareList());
+					bbs_lv.getRefreshableView().setAdapter(bookListAdapter);
+					lvSet();
 				}
 			}
 			
@@ -288,61 +292,6 @@ public class SearchActivity extends BaseActivty {
 		bbs_lv.setLastUpdatedLabel(TimeTools.getStringDate());
 	}
 
-	class BookListAdapter extends MyBaseAdapter<Book, ListView> {
-
-		public BookListAdapter(Context context, List<Book> list) {
-			super(context, list);
-			// TODO Auto-generated constructor stub
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			ViewHolder holder = null;
-			if (convertView == null) {
-				holder = new ViewHolder();
-				convertView = View.inflate(context, R.layout.item_reply_post, null);
-				holder.name = (TextView) convertView.findViewById(R.id.name);
-				holder.post_detail_title = (TextView) convertView.findViewById(R.id.post_detail_title);
-				holder.dingjia = (TextView) convertView.findViewById(R.id.dingjia);
-				holder.zhekou = (TextView) convertView.findViewById(R.id.zhekou);
-				holder.maijia = (TextView) convertView.findViewById(R.id.maijia);
-
-				holder.gonghuo = (TextView) convertView.findViewById(R.id.gonghuo);
-				holder.yuanshi = (TextView) convertView.findViewById(R.id.yuanshi);
-				holder.xiancun = (TextView) convertView.findViewById(R.id.xiancun);
-				convertView.setTag(holder);
-			} else {
-				holder = (ViewHolder) convertView.getTag();
-			}
-			holder.name.setText("条码：" + list.get(position).getBarCode());
-			holder.post_detail_title.setText(list.get(position).getName());
-			holder.dingjia.setText("定价：" + list.get(position).getPrice() + "");
-			holder.zhekou.setText("折扣：" + list.get(position).getDtlDiscount() + "%");
-			holder.maijia.setText("卖价：" + list.get(position).getDtlDscntPrice() + "");
-
-			holder.gonghuo.setText("供货商：" + list.get(position).getStockName());
-			holder.yuanshi.setText("原始数量：" + list.get(position).getOriginalAmnt() + "");
-			holder.xiancun.setText("现存数量：" + list.get(position).getCurrentAmnt() + "");
-			// holder.value.setTag(list.get(position).getKey());
-
-			return convertView;
-
-		}
-
-		class ViewHolder {
-			public TextView name;
-			public TextView post_detail_title;
-			public TextView dingjia;
-			public TextView zhekou;
-			public TextView maijia;
-
-			public TextView gonghuo;
-			public TextView yuanshi;
-			public TextView xiancun;
-		}
-	}
-	
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub

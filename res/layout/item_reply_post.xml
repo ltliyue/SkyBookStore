@@ -11,13 +11,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp" >
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
             android:scaleType="centerInside"
             android:src="@drawable/hbase" />
 
@@ -29,21 +29,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:paddingRight="10dp" >
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/isbn"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="回复了您的帖子："
+                    android:text="ISBN："
                     android:textColor="@color/blue"
                     android:textSize="12sp" />
 
-                <TextView
+                <!--
+                     <TextView
                     android:id="@+id/gonghuo"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -52,103 +53,63 @@
                     android:text="帖子：32511"
                     android:textColor="#9966cc"
                     android:textSize="12sp" />
+                -->
             </LinearLayout>
 
             <TextView
-                android:id="@+id/post_detail_title"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:layout_weight="1"
-                android:maxLines="2"
-                android:text="帖子名称帖子名称帖子名称"
-                android:textSize="15sp" />
+                android:maxLines="3"
+                android:text="2016一本高考理科数学 丁益祥 湖南教育出版社 9787553914022"
+                android:textSize="13sp" />
 
-            <!-- <TextView -->
-            <!-- android:id="@+id/content" -->
-            <!-- android:layout_width="fill_parent" -->
-            <!-- android:layout_height="wrap_content" -->
-            <!-- android:maxLines="1" -->
-            <!-- android:text="点击查看详情" -->
-            <!-- android:textColor="@color/gray_text_color" -->
-            <!-- android:textSize="11sp" /> -->
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="3dp"
+                android:text="作者："
+                android:textColor="#cccccc"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal"
                 android:paddingRight="10dp" >
 
                 <TextView
-                    android:id="@+id/dingjia"
+                    android:id="@+id/price"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="帖子：32511"
-                    android:textColor="#9966cc"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/zhekou"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="帖子：32511"
-                    android:textColor="#9966cc"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/maijia"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="帖子：32511"
-                    android:textColor="#9966cc"
-                    android:textSize="12sp" />
+                    android:text="京东价："
+                    android:textColor="@color/red"
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal"
                 android:paddingRight="10dp" >
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text=""
-                    android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/yuanshi"
+                    android:id="@+id/publisher"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:gravity="center_vertical|right"
                     android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="帖子：32511"
-                    android:textColor="#663300"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/xiancun"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="帖子：32511"
+                    android:text="出版社："
                     android:textColor="#663300"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -158,7 +119,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="10dp"
-        android:background="#7FB80F" />
+        android:layout_marginTop="5dp"
+        android:background="#cccccc" />
 
 </LinearLayout>

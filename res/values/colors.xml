@@ -15,5 +15,6 @@
     <color name="possible_result_points">#c0ffff00</color>
     <color name="line">#b6b6b6</color>
     <color name="blue">#5b93f1</color>
-
+    
+    <color name="red">#FF0000</color>
 </resources>
