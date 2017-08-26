@@ -108,13 +108,13 @@ public final class R {
 		public static final int videoicon = 0x7f070057;
 	}
 	public static final class layout {
-		public static final int custom_toast = 0x7f03000c;
-		public static final int item_album_pager = 0x7f03000d;
-		public static final int layout_loading = 0x7f030010;
-		public static final int pull_to_load_footer = 0x7f030012;
-		public static final int pull_to_refresh_header = 0x7f030013;
-		public static final int slidingmenumain = 0x7f030015;
-		public static final int swipeback_layout = 0x7f030016;
+		public static final int custom_toast = 0x7f03000d;
+		public static final int item_album_pager = 0x7f03000e;
+		public static final int layout_loading = 0x7f030011;
+		public static final int pull_to_load_footer = 0x7f030013;
+		public static final int pull_to_refresh_header = 0x7f030014;
+		public static final int slidingmenumain = 0x7f030016;
+		public static final int swipeback_layout = 0x7f030017;
 	}
 	public static final class string {
 		public static final int Files = 0x7f080001;

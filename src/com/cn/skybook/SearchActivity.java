@@ -1,5 +1,6 @@
 package com.cn.skybook;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -12,13 +13,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.cn.finder.base.BaseActivty;
 import com.cn.finder.pulltorefresh.PullToRefreshBase;
 import com.cn.finder.pulltorefresh.PullToRefreshBase.OnRefreshListener;
 import com.cn.finder.pulltorefresh.PullToRefreshListView;
 import com.cn.skybook.model.Book;
 import com.cn.skybook.model.BookSearchResult;
+import com.cn.skybook.model.WareList;
 import com.cn.skybook.utils.TimeTools;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -66,6 +67,8 @@ public class SearchActivity extends BaseActivty {
 	String url = "";
 
 	BookWebListAdapter bookListAdapter;
+	
+	ArrayList<WareList> wareLists;
 
 	@Override
 	protected void initView() {
@@ -185,9 +188,9 @@ public class SearchActivity extends BaseActivty {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				// Intent intent = new Intent(ct, BBSDetailsActivity.class);
-				// intent.putExtra("tid", posts.get(position).getTid());
-				// ct.startActivity(intent);
+				 Intent intent = new Intent(ct, SearchInfoActivity.class);
+				 intent.putExtra("wareid", wareLists.get(position).getWareId());
+				 ct.startActivity(intent);
 
 			}
 		});
@@ -207,7 +210,7 @@ public class SearchActivity extends BaseActivty {
 			@Override
 			public void onSuccess(ResponseInfo<String> arg0) {
 				if (arg0.result != null) {
-					Document doc = Jsoup.parse(GetInfoByHttpUtils.getInstence().httpGet(url));
+					Document doc = Jsoup.parse(arg0.result);
 
 			        Elements scripts = doc.select("script");
 
@@ -222,14 +225,19 @@ public class SearchActivity extends BaseActivty {
 			            }
 			        }
 			        if (data != null) {
-			            JSONObject jsonObject = JSON.parseObject(data);
+			        	com.alibaba.fastjson.JSONObject jsonObject = JSON.parseObject(data);
 			            String wareList  = jsonObject.getString("wareList");
-			            System.out.println(wareList);
+
+			        	BookSearchResult bookSearchResult = JSON.parseObject(wareList,BookSearchResult.class);
+						
+						bookListAdapter = new BookWebListAdapter(ct, bookSearchResult.getWareList());
+						bbs_lv.getRefreshableView().setAdapter(bookListAdapter);
+						lvSet();
 			        }
-			        
 					BookSearchResult bookSearchResult = JSON.parseObject(arg0.result,BookSearchResult.class);
 					
-					bookListAdapter = new BookWebListAdapter(ct, bookSearchResult.getWareList());
+					wareLists = bookSearchResult.getWareList();
+					bookListAdapter = new BookWebListAdapter(ct, wareLists);
 					bbs_lv.getRefreshableView().setAdapter(bookListAdapter);
 					lvSet();
 				}

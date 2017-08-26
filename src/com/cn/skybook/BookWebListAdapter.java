@@ -38,10 +38,10 @@ public class BookWebListAdapter extends MyBaseAdapter<WareList, ListView> {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		Picasso.with(context).load(list.get(position).getImageurl()).into(holder.image);
-		holder.isbn.setText("条码：XXX");
+		holder.isbn.setText("");
 		holder.name.setText(list.get(position).getWname());
-		holder.author.setText("折扣：" + list.get(position).getAuthor());
-		holder.price.setText("卖价：" + list.get(position).getJdPrice());
+		holder.author.setText("作者：" + list.get(position).getAuthor());
+		holder.price.setText("京东价：" + list.get(position).getJdPrice());
 		holder.publisher.setText(list.get(position).getShopName());
 
 		return convertView;
