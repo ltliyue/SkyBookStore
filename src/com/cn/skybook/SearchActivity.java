@@ -188,7 +188,8 @@ public class SearchActivity extends BaseActivty {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				 Intent intent = new Intent(ct, SearchInfoActivity.class);
+//				 Intent intent = new Intent(ct, SearchInfoActivity.class);
+				 Intent intent = new Intent(ct, WebViewActivity.class);
 				 intent.putExtra("wareid", wareLists.get(position).getWareId());
 				 ct.startActivity(intent);
 
