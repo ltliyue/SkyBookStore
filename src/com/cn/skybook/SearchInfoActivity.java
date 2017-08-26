@@ -38,6 +38,7 @@ public class SearchInfoActivity extends BaseActivty {
 	@Override
 	protected void initView() {
 		setContentView(R.layout.activity_searchinfo);
+		text1 = (TextView) findViewById(R.id.text1);
 	}
 
 	@Override
@@ -58,8 +59,9 @@ public class SearchInfoActivity extends BaseActivty {
 
 				BookInfo bookInfo = JSON.parseObject(arg0.result, BookInfo.class);
 
+				System.out.println("-->"+bookInfo.getWdis());
 				Message message = new Message();
-				message.what = 1;
+				message.what = 0;
 				message.obj = bookInfo.getWdis();
 
 				mhandleer.sendMessage(message);

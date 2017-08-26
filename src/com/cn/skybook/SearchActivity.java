@@ -230,16 +230,12 @@ public class SearchActivity extends BaseActivty {
 
 			        	BookSearchResult bookSearchResult = JSON.parseObject(wareList,BookSearchResult.class);
 						
-						bookListAdapter = new BookWebListAdapter(ct, bookSearchResult.getWareList());
+			        	wareLists = bookSearchResult.getWareList();
+			        	
+						bookListAdapter = new BookWebListAdapter(ct, wareLists);
 						bbs_lv.getRefreshableView().setAdapter(bookListAdapter);
 						lvSet();
 			        }
-					BookSearchResult bookSearchResult = JSON.parseObject(arg0.result,BookSearchResult.class);
-					
-					wareLists = bookSearchResult.getWareList();
-					bookListAdapter = new BookWebListAdapter(ct, wareLists);
-					bbs_lv.getRefreshableView().setAdapter(bookListAdapter);
-					lvSet();
 				}
 			}
 			
